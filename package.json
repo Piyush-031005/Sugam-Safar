@@ -1,0 +1,11 @@
+{
+  "name": "sugam-safar",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "install:frontend": "cd frontend && npm install",
+    "start:backend": "cd backend && uvicorn main:app --reload --port 8000"
+  }
+}
