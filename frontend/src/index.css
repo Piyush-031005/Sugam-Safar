@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-cream text-gray-800 font-sans;
+    background-color: #FFFACD;
+  }
+  
+  h1, h2, h3 {
+    @apply font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-200 shadow-md hover:shadow-lg active:scale-95;
+    background-color: #B81104;
+    color: #FFFACD;
+  }
+  .btn-primary:hover {
+    background-color: #8B0000;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 rounded-xl font-semibold transition-all duration-200 border-2;
+    border-color: #B81104;
+    color: #B81104;
+  }
+  .btn-secondary:hover {
+    background-color: #B81104;
+    color: #FFFACD;
+  }
+  
+  .card {
+    @apply bg-white rounded-2xl shadow-md p-5 hover:shadow-lg transition-shadow duration-200;
+  }
+  
+  .card-cream {
+    @apply rounded-2xl shadow-md p-5 hover:shadow-lg transition-shadow duration-200;
+    background-color: #FFFACD;
+    border: 1px solid #f0e68c;
+  }
+  
+  .crowd-low {
+    @apply text-green-700 bg-green-100 border border-green-200;
+  }
+  
+  .crowd-medium {
+    @apply text-yellow-700 bg-yellow-100 border border-yellow-200;
+  }
+  
+  .crowd-high {
+    @apply text-orange-700 bg-orange-100 border border-orange-200;
+  }
+  
+  .crowd-very-high {
+    @apply text-red-700 bg-red-100 border border-red-200;
+  }
+  
+  .nav-link {
+    @apply px-4 py-2 rounded-lg font-medium transition-all duration-200;
+  }
+  
+  .nav-link.active {
+    background-color: #FFFACD;
+    color: #B81104;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-3 rounded-xl border-2 border-gray-200 focus:outline-none transition-colors duration-200 bg-white;
+  }
+  .input-field:focus {
+    border-color: #B81104;
+  }
+}
+
+/* Bus pulse animation */
+@keyframes bus-pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.05); opacity: 0.8; }
+}
+
+.bus-pulse {
+  animation: bus-pulse 2s ease-in-out infinite;
+}
+
+/* Crowd wave animation */
+@keyframes crowd-wave {
+  0% { width: 0%; }
+  100% { width: var(--crowd-width); }
+}
+
+.crowd-bar {
+  animation: crowd-wave 1s ease-out forwards;
+}
+
+/* Leaflet map overrides */
+.leaflet-container {
+  border-radius: 1rem;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: #FFFACD; }
+::-webkit-scrollbar-thumb { background: #B81104; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #8B0000; }
+
+/* Journey card highlight */
+.journey-card-fastest { border-left: 4px solid #3B82F6; }
+.journey-card-comfortable { border-left: 4px solid #22C55E; }
+.journey-card-balanced { border-left: 4px solid #F59E0B; }
+
+/* Gradient header */
+.header-gradient {
+  background: linear-gradient(135deg, #B81104 0%, #8B0000 100%);
+}
+
+/* Stop timeline */
+.stop-timeline {
+  position: relative;
+}
+.stop-timeline::before {
+  content: '';
+  position: absolute;
+  left: 10px;
+  top: 20px;
+  bottom: 20px;
+  width: 2px;
+  background: #B81104;
+}
